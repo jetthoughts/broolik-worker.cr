@@ -5,8 +5,10 @@ Crystal Lang implementation for the Link Checker
 ## TODO
 
 - [x] Use DB Connection Pool on Sidekiq instead of create new one
-- [ ] Add tests/dev env example
-- [ ] Where to put code in the monolith Rails Repo (Ideas: app/crystal, engines/background.cr, app/workers.cr)
+- [ ] Auto-set connection pool from number of workers to use
+- [ ] Add tests/development env example
+- [ ] Where to put code in the monolith Rails Repo
+      (Ideas: app/crystal, engines/background.cr, app/workers.cr)
 - [ ] Deployment on Heroku with Ruby on Rails
 
 ## Installation
