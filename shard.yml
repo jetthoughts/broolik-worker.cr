@@ -1,0 +1,27 @@
+name: broolik-worker
+version: 0.1.0
+
+authors:
+  - Paul Keen <pftg@users.noreply.github.com>
+
+targets:
+  broolik-checker.cr:
+    main: src/broolik-worker.cr
+
+crystal: 0.31.1
+
+license: MIT
+
+dependencies:
+  granite:
+    github: amberframework/granite
+
+  sqlite3:
+    github: crystal-lang/crystal-sqlite3
+
+  pg:
+    github: will/crystal-pg
+
+  sidekiq:
+    github: mperham/sidekiq.cr
+    branch: master
