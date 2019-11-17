@@ -1,34 +1,32 @@
 # broolik-worker
 
-TODO: Write a description here
+Crystal Lang implementation for the Link Checker
 
 ## TODO
 
 - [x] Use DB Connection Pool on Sidekiq instead of create new one
 - [ ] Add tests/dev env example
 - [ ] Where to put code in the monolith Rails Repo (Ideas: app/crystal, engines/background.cr, app/workers.cr)
-- [ ] Deploy on Heroku
+- [ ] Deployment on Heroku with Ruby on Rails
 
 ## Installation
 
-TODO: Write installation instructions here
+```bash
+crystal build src/sidekiq.cr -o bin/sidekiq.cr --release
+``` 
 
 ## Usage
 
-TODO: Write usage instructions here
+```bash
+bin/sidekiq.cr -q worker.cr -c 100 -e production
+```
 
 ## Development
 
-TODO: Write development instructions here
-
-## Contributing
-
-1. Fork it (<https://github.com/your-github-user/broolik-worker/fork>)
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+```bash
+crystal spec
+```
 
 ## Contributors
 
-- [Paul Nikitochkin](https://github.com/your-github-user) - creator and maintainer
+- [Paul Keen](https://github.com/pftg) - creator and maintainer
