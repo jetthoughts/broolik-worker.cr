@@ -12,9 +12,9 @@ module Broolik::Worker
       if url = URL.find(url_id)
         logger.debug "Checking #{url.id.to_s}, #{url.url.to_s}!"
         Broolik::Worker::CheckURLService.new(url).perform
-        logger.debug "Done #{url.id.to_s} #{url.url} => [#{url.last_response_status}]!"
+        logger.debug "Done #{url.id} #{url.url} => [#{url.response_http_status}]!"
       else
-        logger.warn "No Url with id: #{url_id.to_s}"
+        logger.warn "No Url with id: #{url_id}"
       end
     end
   end
