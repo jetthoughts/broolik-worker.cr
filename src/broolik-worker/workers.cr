@@ -8,14 +8,8 @@ module Broolik::Worker
       job.queue = "worker.cr"
     end
 
-    def perform(url_id : Int64)
-      if url = URL.find(url_id)
-        logger.debug "Checking #{url.id.to_s}, #{url.url.to_s}!"
-        Broolik::Worker::CheckURLService.new(url).perform
-        logger.debug "Done #{url.id} #{url.url} => [#{url.response_http_status}]!"
-      else
-        logger.warn "No Url with id: #{url_id}"
-      end
+    def perform(url : String)
+      Broolik::Worker::CheckURLService.new(url).perform
     end
   end
 end
